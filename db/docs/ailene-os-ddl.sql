@@ -1,3 +1,0 @@
--- ailene-os DDL
--- Placeholder: schema not defined yet.
--- Once tables are designed, mirror them into prisma/schema.prisma.
