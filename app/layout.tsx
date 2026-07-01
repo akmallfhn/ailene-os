@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import { TRPCProvider } from "@/trpc/client";
 import "./globals.css";
 
@@ -34,7 +35,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <TRPCProvider baseURL={trpcBaseURL}>{children}</TRPCProvider>
+        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ID!}>
+          <TRPCProvider baseURL={trpcBaseURL}>{children}</TRPCProvider>
+        </GoogleOAuthProvider>
       </body>
     </html>
   );
