@@ -1,7 +1,5 @@
-export default function OSPage() {
-  return (
-    <main>
-      <h1>ailene os</h1>
-    </main>
-  );
+import HomePageOS from "@/components/pages/HomePageOS";
+
+export default function Page() {
+  return <HomePageOS />;
 }
