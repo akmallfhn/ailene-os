@@ -35,7 +35,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ID!}>
+        <GoogleOAuthProvider
+          clientId={process.env.NEXT_PUBLIC_GOOGLE_OAUTH_ID!}
+        >
           <TRPCProvider baseURL={trpcBaseURL}>{children}</TRPCProvider>
         </GoogleOAuthProvider>
       </body>

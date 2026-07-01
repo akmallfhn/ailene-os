@@ -61,6 +61,18 @@ const nextConfig = {
           source: "/(os|api)",
           destination: "/_not-found/page",
         },
+        // Route root "/" to not-found when accessed via the api.* host.
+        {
+          source: "/",
+          has: [
+            {
+              type: "header",
+              key: "host",
+              value: "api.(ailene.id|example.com).*",
+            },
+          ],
+          destination: "/_not-found/page",
+        },
         // Route root "/" to "/os" when accessed via the os.* host.
         {
           source: "/",
